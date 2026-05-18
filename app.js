@@ -442,5 +442,41 @@ class SessionManager {
         StorageManager.remove(CONFIG.storageKeys.currentUser);
         localStorage.removeItem('diario_remember');
     }
+    // Agregar al inicio de app.js, después de CONFIG
+
+// Crear usuarios de prueba si no existen
+(function initTestUsers() {
+    const users = StorageManager.get(CONFIG.storageKeys.users) || [];
     
+    if (users.length === 0) {
+        // Usuario de prueba
+        users.push({
+            id: 'user_test_001',
+            name: 'María García',
+            email: 'usuario@ejemplo.com',
+            password: 'usuario123',
+            role: 'usuario',
+            avatar: null,
+            bio: 'Me gusta expresar mis emociones',
+            createdAt: new Date().toISOString(),
+            lastLogin: null
+        });
+        
+        // Admin de prueba
+        users.push({
+            id: 'user_admin_001',
+            name: 'Administrador',
+            email: 'admin@diario.com',
+            password: 'admin123',
+            role: 'admin',
+            avatar: null,
+            bio: 'Gestor del diario emocional',
+            createdAt: new Date().toISOString(),
+            lastLogin: null
+        });
+        
+        StorageManager.set(CONFIG.storageKeys.users, users);
+        console.log('✅ Usuarios de prueba creados');
+    }
+})();
     /***/
