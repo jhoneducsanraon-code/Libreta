@@ -2056,13 +2056,13 @@ body {
 }
 
 .data-action {
-    display: flex
+    display: flex;
       align-items: center;
     justify-content: space-between;
     padding: 15px;
     background: var(--bg-secondary);
     border-radius: var(--border-radius-sm);
-    transition: all var(--transition-normal);
+    transition : all var(--transition-normal);
 }
 
 .data-action:hover {
