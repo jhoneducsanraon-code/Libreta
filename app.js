@@ -985,8 +985,9 @@ class UIController {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend:
-                                            position: 'bottom'
+                    legend:{
+                    position: 'bottom'
+                }
                 }
             }
         });
